@@ -9,23 +9,22 @@ function Clientes(folio, nombre, telefono, fecha) {
   this.telefono = telefono;
   this.fecha = fecha;
 }
-/* Lee valores de los campos de entrada de datos */ 
+/* Lee valores de los campos de entrada de datos */
 var nameValor = document.getElementById("nombre");
 var telValor = document.getElementById("telefono");
 var dateValor = document.getElementById("fecha");
 
 function guardarEditar() {
-  if (banderaUpdate) { 
+  if (banderaUpdate) {
     guardarEdicion();
   } else {
     guardar();
   }
 }
 
-/* Crea un objeto y Guarda los datos él y Guarda el Objeto en un Arreglo de datos */ 
+/* Crea un objeto y Guarda los datos él y Guarda el Objeto en un Arreglo de datos */
 function guardar() {
   if (nameValor.value && telValor.value && dateValor.value !== "") {
-        
     /*Crea un objeto nuevo y guarda los datos en él */
     var Clientes1 = new Clientes(
       consecutivo,
@@ -34,7 +33,7 @@ function guardar() {
       dateValor.value
     );
 
-   /* Guarda el objeto en un arreglo */   
+    /* Guarda el objeto en un arreglo */
     arreglo.push(Clientes1);
 
     /* Imprime en Pantalla los registros contenidos en una tabla */
@@ -78,6 +77,7 @@ function guardar() {
     fila.appendChild(celda6);
 
     cuerpoTabla.appendChild(fila);
+
     /* Limpia el Formulario */
     nameValor.value = "";
     telValor.value = "";
@@ -86,23 +86,24 @@ function guardar() {
     consecutivo = consecutivo + 1;
   }
 }
-/* Inicia Proceso de Edicion, leyendo el objeto a Modificar del arreglo y colocandolos en los campos de edicion */ 
+/* Inicia Proceso de Edicion, leyendo el objeto a Modificar del arreglo y colocandolos en los campos de edicion */
 function editar(parametro) {
-    banderaUpdate=true;
-    consecutivo = parametro;
-    var objetoUpdate = arreglo[parametro];
-    document.getElementById("nombre").value = objetoUpdate.nombre;
-    document.getElementById("telefono").value = objetoUpdate.telefono;
-    document.getElementById("fecha").value = objetoUpdate.fecha;
-    console.log(consecutivo);
-    return objetoUpdate;
+  banderaUpdate = true;
+  consecutivo = parametro;
+  var objetoUpdate = arreglo[parametro];
+  document.getElementById("nombre").value = objetoUpdate.nombre;
+  document.getElementById("telefono").value = objetoUpdate.telefono;
+  document.getElementById("fecha").value = objetoUpdate.fecha;
+  uno = document.getElementById("botonP");
+  uno.innerText = "Actualizar";
+  return objetoUpdate;
 }
 /* Una vez modificados los campos a cambiar, se leen y guardan el objeto y este objeto en la misma posicion dentro del arreglo*/
 function guardarEdicion() {
-    var nameValor = document.getElementById("nombre");
-    var telValor = document.getElementById("telefono");
-    var dateValor = document.getElementById("fecha");
-    if (nameValor.value && telValor.value && dateValor.value !== "") {
+  var nameValor = document.getElementById("nombre");
+  var telValor = document.getElementById("telefono");
+  var dateValor = document.getElementById("fecha");
+  if (nameValor.value && telValor.value && dateValor.value !== "") {
     objetoUpdate = arreglo[consecutivo];
     objetoUpdate.folio = consecutivo;
     objetoUpdate.nombre = nameValor.value;
@@ -113,16 +114,15 @@ function guardarEdicion() {
     telValor.value = "";
     dateValor.value = "";
     banderaUpdate = false;
+    uno = document.getElementById("botonP");
+    uno.innerText = "Guardar";
 
- borrarTabla(); //Borra Tabla Existente antes de los cambios de edificion.
- console.log(arreglo);
+    borrarTabla(); //Borra Tabla Existente antes de los cambios de edificion.
+    console.log(arreglo);
 
-
-  imprimirTabla();  // Imprime en pantalla la tabla con los datos modificados
+    imprimirTabla(); // Imprime en pantalla la tabla con los datos modificados
   }
 }
-
-    
 
 /* Funcion que borra el registro seleccionado */
 
@@ -130,14 +130,13 @@ function borrar(item) {
   arreglo.splice(item, 1); //Borra registro del arreglo de objetos
 
   borrarTabla(); // Llama funcion que borra la tabla de la pantalla
-  
 
-  imprimirTabla();  // Llama  a la funcion que imprime en pantalla la tabla con los datos que quedan despues del borrado
+  imprimirTabla(); // Llama  a la funcion que imprime en pantalla la tabla con los datos que quedan despues del borrado
 }
 
 /* Funcion que Borra la tabla de datos de la pantalla  */
 function borrarTabla() {
-  var node = document.getElementById("cuerpoTable"); 
+  var node = document.getElementById("cuerpoTable");
   while (node.hasChildNodes()) {
     node.removeChild(node.lastChild);
   }

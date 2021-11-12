@@ -14,65 +14,80 @@
     <link rel="stylesheet" href="./estilos.css" />
   </head>
   <body>
-    <header class="cabecera">
-      <figure class="logo"></figure>
-      <h1 class="titulo">Registro de citas</h1>
-    </header>
-    <section class="seccRegistro">
-      <form class="formulario" action="">
-        <div>
-          <label>Nombre:</label>
-          <br />
-          <input
-            class="entradas"
-            id="nombre"
-            type="text"
-            name="nombre"
-            placeholder="Nombre completo"
-            size="40"
-            required
-          />
-        </div>
-        <div>
-          <label>Telefono:</label>
-          <br />
-          <input
-            class="entradas"
-            type="tel"
-            name="telefono"
-            id="telefono"
-            size="13"
-            placeholder="Ej.: 555-4816002"
-            required
-          />
-        </div>
-        <div>
-          <label>Fecha de la Cita</label>
-          <br />
-          <input
-            class="entradas"
-            type="datetime-local"
-            name="fecha"
-            id="fecha"
-            required
-          />
-        </div>
-        <div>
-          <br />
-          <button class="boton" id="botonP" onclick="guardarEditar()">
-            Guardar
-          </button>
-        </div>
-      </form>
+    <section class="fija">
+      <header class="cabecera">
+        <figure class="logo"></figure>
+        <h1 class="titulo">Registro de citas</h1>
+      </header>
+      <section class="seccRegistro">
+        <form class="formulario" action="">
+          <div>
+            <label>Nombre:</label>
+            <br />
+            <input
+              class="entradas"
+              id="nombre"
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              size="40"
+              required
+            />
+          </div>
+          <div>
+            <label>Telefono:</label>
+            <br />
+            <input
+              class="entradas"
+              type="tel"
+              name="telefono"
+              id="telefono"
+              size="13"
+              placeholder="Ej.: 5554816002"
+              required
+            />
+          </div>
+          <div>
+            <label>Fecha de la Cita</label>
+            <br />
+            <input
+              class="entradas"
+              type="datetime-local"
+              name="fecha"
+              id="fecha"
+              required
+            />
+          </div>
+          <div>
+            <br />
+            <button class="boton" id="botonP" onclick="guardarEditar()">
+              Guardar
+            </button>
+          </div>
+        </form>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col1" scope="col">#</th>
+              <th class="colNombre" scope="col">Nombre</th>
+              <th class="colTelefono" scope="col">Telefono</th>
+              <th class="colFecha" scope="col">Fecha</th>
+              <th class="colBoton" scope="col"></th>
+              <th class="colBoton" scope="col"></th>
+            </tr>
+          </thead>
+        </table>
+      </section>
     </section>
-    <section class="listadoRegistros">
-      <table id="tabla" class="table">
+    <section class="listadodeDatos">
+      <table id="tabla">
         <thead>
-          <tr>
-            <th class="col1" scope="col">#</th>
-            <th class="colNombre" scope="col">Nombre</th>
-            <th class="colTelefono" scope="col">Telefono</th>
-            <th class="colFecha" scope="col">Fecha</th>
+          <tr class="cabeceraOculta">
+            <th class="col1" scope="col"></th>
+            <th class="colNombre" scope="col"></th>
+            <th class="colTelefono" scope="col"></th>
+            <th class="colFecha" scope="col"></th>
             <th class="colBoton" scope="col"></th>
             <th class="colBoton" scope="col"></th>
           </tr>
@@ -80,6 +95,12 @@
         <tbody id="cuerpoTable"></tbody>
       </table>
     </section>
+    <footer>
+      <p class="pie">
+        © 2021 Vid Natura. Todos los derechos reservados. Esta es una página de
+        aterrizaje ficticia para fines académicos.
+      </p>
+    </footer>
     <script src="./index.js"></script>
   </body>
 </html>
