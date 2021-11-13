@@ -103,6 +103,7 @@ input:focus {
 .tabla2 {
   width: 100%;
   text-align: left;
+  overflow: none;
 }
 
 td {
@@ -144,12 +145,14 @@ tr:hover {
 .listadodeDatos {
   margin-top: 250px;
   width: 100%;
-  min-height: 350px;
+  min-height: 400px;
 }
 
 .pie {
   text-align: center;
   font-size: small;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 @media screen and (max-width: 701px) {
@@ -186,6 +189,6 @@ tr:hover {
   .listadodeDatos {
     margin-top: 450px;
     width: 100%;
-    min-height: 300px;
+    min-height: 150px;
   }
 }
