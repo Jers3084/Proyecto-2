@@ -34,7 +34,7 @@
   width: 80%;
   height: 100%;
   padding-top: 3%;
-  padding-right: 13px;
+  padding-right: 20px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -44,14 +44,12 @@
 .seccRegistro {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100%vw;
   background-color: honeydew;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .formulario {
+  padding-top: 30px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -70,6 +68,12 @@ label {
   border-radius: 4px;
 }
 
+input:focus {
+  border: 3px solid dodgerblue;
+  border-radius: 4px;
+  background-color: #e5f8d3;
+}
+
 .boton {
   width: 110px;
   height: 35px;
@@ -86,6 +90,27 @@ label {
   background-color: dodgerblue; /* Green */
   color: white;
   border-width: 3px;
+  cursor: pointer;
+}
+
+.tabla1 {
+  margin-top: 30px;
+  width: 95%;
+  text-align: left;
+  border-bottom: gray 1px solid;
+}
+
+.tabla2 {
+  width: 100%;
+  text-align: left;
+}
+
+td {
+  border-bottom: gray 1px solid;
+}
+
+tr:nth-child(even) {
+  background-color: #eafed5;
 }
 
 .col1 {
@@ -111,6 +136,11 @@ label {
 .cabeceraOculta {
   height: 0;
 }
+
+tr:hover {
+  background-color: #d9f5bd;
+}
+
 .listadodeDatos {
   margin-top: 250px;
   width: 100%;
