@@ -13,7 +13,7 @@
 
 .cabecera {
   width: 100%;
-  height: 120px;
+  height: 150px;
   background-color: #20b2aa;
   display: flex;
   justify-content: space-around;
@@ -23,7 +23,7 @@
 .logo {
   width: 10%;
   height: 100%;
-  background-image: url(./img/logo_vidanatura_adaptado.jpg);
+  background-image: url(./img/logo_vidanatura.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -34,9 +34,10 @@
   width: 80%;
   height: 100%;
   padding-top: 3%;
-  padding-right: 20px;
+  padding-right: 50px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
   font-weight: bold;
   color: rgb(14, 14, 139);
 }
@@ -101,7 +102,7 @@ input:focus {
 }
 
 .tabla2 {
-  width: 100%;
+  width: 99%;
   text-align: left;
   overflow: none;
 }
@@ -143,7 +144,7 @@ tr:hover {
 }
 
 .listadodeDatos {
-  margin-top: 250px;
+  margin-top: 290px;
   width: 100%;
   min-height: 400px;
 }
@@ -163,11 +164,13 @@ tr:hover {
   }
   .titulo {
     width: 70%;
-    padding-top: 5%;
+    padding-top: 10%;
+    font-size: 30px;
   }
 
   .formulario {
     margin: 0%;
+    padding-left: 5px;
     display: inline-block;
     justify-content: space-evenly;
   }
